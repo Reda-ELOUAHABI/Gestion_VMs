@@ -1,0 +1,10 @@
+<div class="card" style="border: 1px solid; height: 300px; width: 200px; background-color: #9f9f9f ">
+  <h1>{{vm.nom}}</h1>
+  <p>Ip ;{{vm.adressIp}}</p>
+  <h4>OS : {{vm.os }}</h4>
+  <p>Etat : {{vm.etat }}</p>
+  <button class="btn"
+          [ngClass]="vm.etat ==1 ? 'btn-danger' : 'btn-success'"
+          (click) = "changerEtat(vm._id,vm.etat)"
+  >{{vm.etat ==1 ? 'arreter' : 'demarrer'}}</button>
+</div>

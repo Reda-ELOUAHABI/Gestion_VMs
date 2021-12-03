@@ -1,0 +1,12 @@
+<div class="login-page">
+  <div class="form" style="height: 500px;">
+    <form class="login-form">
+      <input type="text" placeholder="nom Vm" #nom/>
+      <input type="text" placeholder="adresse Ip" #adressIp />
+      <input type="text" placeholder="os (Operating System)" #os/>
+      <input type="text" placeholder="etat VM" #etat/>
+      <button (click)="AddVm(nom.value,adressIp.value,os.value, etat.value)">create</button>
+      <p class="message">Already registered? <a [routerLink]="['/signin']">Log in to your account</a></p>
+    </form>
+  </div>
+</div>

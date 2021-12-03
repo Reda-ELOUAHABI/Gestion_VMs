@@ -1,0 +1,12 @@
+.shwoDetailsBtn {
+  position: absolute;
+  bottom: 20px;
+}
+.card {
+  text-align: center;
+}
+
+.IdExist {
+  /*Netflix Color*/
+  background-color: #ecead0 !important;
+}

@@ -1,0 +1,12 @@
+<div class="login-page">
+  <div class="form" style="height: 500px;">
+    <form class="login-form">
+      <input type="text" placeholder="name" #username/>
+      <input type="password" placeholder="password" #password />
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address" #email/>
+      <button (click)="sendUser(username.value,email.value,password.value)">create</button>
+      <p class="message">Already registered? <a [routerLink]="['/signin']">Log in to your account</a></p>
+    </form>
+  </div>
+</div>

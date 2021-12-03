@@ -15,6 +15,19 @@ export class VmComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteVm(id: any) {
+    this.vmService.DeleteVm(id).subscribe((res: any) => {
+      console.log(res);
+      alert("deleted Successfully");
+      window.location.reload();
+    },
+      error => {
+        console.log(error.error)
+      }
+    )
+
+  }
+
   changerEtat(id: any, etat: any) {
     // je change pas etat dans serveur
     if (etat == 1) {
@@ -23,14 +36,14 @@ export class VmComponentComponent implements OnInit {
     else {
       etat = 1
     }
-    this.vmService.ChanegeVmState(id, etat).subscribe((res:any)=>{
+    this.vmService.ChanegeVmState(id, etat).subscribe((res: any) => {
       console.log(res);
       alert("changed Successfully");
-        window.location.reload();
+      window.location.reload();
     },
-error => {
-      console.log(error.error)
-}
-      )
+      error => {
+        console.log(error.error)
+      }
+    )
   }
 }

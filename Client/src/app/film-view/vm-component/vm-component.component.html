@@ -7,4 +7,9 @@
           [ngClass]="vm.etat ==1 ? 'btn-danger' : 'btn-success'"
           (click) = "changerEtat(vm._id,vm.etat)"
   >{{vm.etat ==1 ? 'arreter' : 'demarrer'}}</button>
+<br>
+  <button class="btn"
+          [ngClass]="vm.etat ==1 ? 'btn-danger' : 'btn-success'"
+          (click) = "deleteVm(vm._id)"
+  >📮</button>
 </div>

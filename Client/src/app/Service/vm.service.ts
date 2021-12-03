@@ -42,6 +42,11 @@ export class VmService {
     const url = URL + "/api/vm/" ;
     return this.http.get(url);
   }
+  DeleteVm(id:any){
+    const url = URL + "/api/vm/"+id.toString();
+    return this.http.delete(url);
+  }
+
   ChanegeVmState(id: any, etat:any){
     const url = URL + "/api/vm/"+id.toString();
     console.log(url== "http://localhost:3000/api/vm/61aa22b64b65908299b33f2e")

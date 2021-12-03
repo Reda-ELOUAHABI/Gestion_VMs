@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {VmService} from "../Service/vm.service";
+import { VmService } from "../Service/vm.service";
 
 @Component({
   selector: 'app-signup',
@@ -15,20 +15,19 @@ export class SignupComponent implements OnInit {
   }
 
   sendUser(username: string, email: string, password: string) {
-// alert(username+password);
-//Using FireBase
-//     this.service.PostUser(username,password).subscribe(res => alert(res))
 
     //Using my Backend
-    this.service.Register(username,email,password).subscribe((res:any) =>{
-      console.log("information of new user : " + email+ username+password)
+    this.service.Register(username, email, password).subscribe((res: any) => {
+      console.log("information of new user : " + email + username + password)
       console.log(res);
+      alert("User registred successfully");
+      window.location.reload();
     },
       err => {
-      console.log('HTTP Error', err);
+        console.log('HTTP Error', err);
         alert(JSON.stringify(err.error))
       },
       () => console.log('HTTP request completed.')
-      )
+    )
   }
 }

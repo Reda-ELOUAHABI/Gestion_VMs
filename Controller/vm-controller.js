@@ -51,6 +51,30 @@ const patchVm = async (req, res) => {
         });
 }
 
+
+const deleteVm = async (req, res) => {
+    const id = req.params.id;
+
+    Vm.findByIdAndRemove(id)
+        .then(data => {
+            if (!data) {
+                res.status(404).send({
+                    message: `Cannot delete Vm with id=${id}. Maybe Vm was not found!`
+                });
+            } else {
+                res.send({
+                    message: "Vm was deleted successfully!"
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Could not delete Vm with id=" + id
+            });
+        });
+}
+
 exports.postVm = postVm;
 exports.patchVm = patchVm;
 exports.getAllVms = getAllVms;
+exports.deleteVm = deleteVm;

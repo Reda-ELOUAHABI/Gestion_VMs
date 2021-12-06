@@ -143,6 +143,10 @@ exports.deleteById = deleteById
 exports.deleteAll = deleteAll
 exports.getConnectionBySite = getConnectionBySite
 
+// Call example: GET 
+// http://localhost:3000/api/countBrowse/http--githubpages-pdfGenerator
+
+
 // Usage
 /*
 <body onload="loadingFunction()">

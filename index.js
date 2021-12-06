@@ -10,6 +10,7 @@ const path = require('path');
 
 const usersRoutes = require('./Routes/users-routes')
 const vmRoutes = require('./Routes/vm-routes')
+const countBrowseRoutes = require('./Routes/countBrowse-routes')
 const HttpError = require("./Models/http-error");
 
 const PORT = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ app.use(express.json())
 
 app.use("/api/users", usersRoutes)
 app.use("/api", vmRoutes)
+app.use("/api", countBrowseRoutes)
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, "Angular", "index.html"));
